@@ -1,14 +1,13 @@
-# [Project Title]
+# autosyn_Quin
 
-[One or two sentences describing the goal of the project: which system is studied and what this repository combines (DFT calculations + experimental procedure under the MEDUSA protocol).]
+[Theorical calculations and automated experimental procedure fot derivates of Quinolines]
 
 This repository contains:
 
 1. **Example outputs of DFT calculations** (geometry optimization, vibrational frequencies, and natural transition orbital (NTO) analysis).
-2. **Execution code for the experimental procedure** developed under the MEDUSA protocol.
 
 > **Associated article:** [Authors, *Title*, Journal, Year. DOI: ...]
-> **Full dataset:** [Figshare DOI, if the complete data are deposited there]
+> **Full dataset:** [Figshare DOI: 10.6084/m9.figshare.34037556]
 
 ---
 
@@ -23,14 +22,6 @@ This repository contains:
 │   ├── vibrational_frequency/   # Vibrational frequency calculations
 │   ├── nto/                     # Natural transition orbital analysis
 │   └── nto_images/              # NTO images
-└── medusa/
-    ├── scripts/                 # Protocol execution code
-    ├── config/                  # Configuration / parameter files
-    ├── example_data/            # Example data to test the scripts
-    └── requirements.txt         # Python (or other language) dependencies
-```
-
-[Adjust folder names to match your repository.]
 
 ---
 
