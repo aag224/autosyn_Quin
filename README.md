@@ -1,13 +1,13 @@
 # autosyn_Quin
 
-[Theorical calculations and automated experimental procedure fot derivates of Quinolines]
+Theorical calculations and automated experimental procedure fot derivates of Quinolines
 
 This repository contains:
 
 1. **Example outputs of DFT calculations** (geometry optimization, vibrational frequencies, and natural transition orbital (NTO) analysis).
 
-> **Associated article:** [Authors, *Title*, Journal, Year. DOI: ...]
-> **Full dataset:** [Figshare DOI: 10.6084/m9.figshare.34037556]
+#> **Associated article:** [Authors, *Title*, Journal, Year. DOI: ...]
+#> **Full dataset:** [Figshare DOI: 10.6084/m9.figshare.34037556]
 
 ---
 
