@@ -22,10 +22,7 @@ This repository contains:
 │   ├── vibrational_frequency/   # Vibrational frequency calculations
 │   ├── nto/                     # Natural transition orbital analysis
 │   └── nto_images/              # NTO images
-
-
-
-
+```
 ---
 
 ## Part 1: DFT calculations
