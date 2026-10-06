@@ -19,7 +19,7 @@ class BaseProcedures(object):
         #self._syringe_content = {"pump_port": "N2"}
 
     def _load_ports_settings(self):
-        with open(Path.cwd().parent.parent / 'Miguel' /  'medusa_test' / 'data' / 'ports_settings.json') as f:
+        with open(Path.cwd().parent.parent / 'data' / 'ports_settings.json') as f:
             self.ports_settings = json.load(f)
 
     def _initialize_pump(self):
@@ -291,17 +291,7 @@ class Reaction(BaseProcedures):
                     "delay": 1
                 }
             },
-            "2": {
-                "task": "schlenk_cycle",
-                "parameters": {
-                    "specification": "gas",
-                    "zones": [{"pump_port": "Br-Quinoline_group_1"}],
-                    "waste": {"pump_port": "waste_group_1"},
-                    "num_cycles": 5,
-                    "delay": 1
-                }
-            },
-            "3":{
+            "2":{
                 "task": "rinse_syringe",
                 "parameters": {
                     "specification": "liquid",
@@ -458,18 +448,7 @@ class Reaction(BaseProcedures):
                     "delay": 1
                 }
             },
-
-            "2": {
-                "task": "schlenk_cycle",
-                "parameters": {
-                    "specification": "gas",
-                    "zones": [{"pump_port": "Malonitrile_group_2"}],
-                    "waste": {"pump_port": "waste_group_2"},
-                    "num_cycles": 5,
-                    "delay": 1
-                }
-            },
-            "3":{
+            "2":{
                 "task": "rinse_syringe",
                 "parameters": {
                     "specification": "liquid",
@@ -571,81 +550,6 @@ class Reaction(BaseProcedures):
                             rinse = True
                 )
         with open(Path.cwd().parent.parent / 'data' / 'experimentTwo_plan.json', 'w') as f:
-            json.dump(self.reaction_steps, f, indent=2)
-
-    def generate_experiment_Three_details(self, num_reactions: int, temp = 0, reaction_time = 2):
-        self.available_reaction_zones = []
-        self.available_1wash_zones = []
-        self.available_2wash_zones = []
-
-        # APLICO LA CONDICIÓN DE SEGUN LA BOMBA Y EL NUMERO DE REACCIONES ESCOGER LA LINEA DEL PASO DEL FLUIDO
-        for i in range(0, num_reactions):
-            self.available_reaction_Two_zones.append({"pump_port": "reaction_group_2",
-                                                "valve_port": f"reaction2_{i}"}
-                                                )
-        for w in range(1, (num_reactions//2)+1):
-            self.available_1wash_zones.append({"pump_port":f"wash{w}_group_4"})
-
-        for w in range(1, (num_reactions//2)+1):
-            self.available_2wash_zones.append({"pump_port":f"wash{w}_group_5"})
-        
-        self.reaction_steps = {
-            "1": {
-                "task": "schlenk_cycle",
-                "parameters": {
-                    "specification": "gas",
-                    "zones":  self.available_reaction_zones,
-                    "num_cycles": 5,
-                    "delay": 1
-                }
-            },
-
-            "2": {
-                "task": "schlenk_cycle",
-                "parameters": {
-                    "specification": "gas",
-                    "zones": [{"pump_port": "Bpin"}],
-                    "num_cycles": 5,
-                    "delay": 1
-                }
-            },
-            "3":{
-                "task": "rinse_syringe",
-                "parameters": {
-                    "specification": "liquid",
-                    "source_zone": {"pump_port": "THF_group_1"},
-                    "waste": {"pump_port": "waste_group_1"},
-                    "quantity": 1,
-                    "iteration": 3,
-                    "delay": 1.0
-                }
-            }
-        }
-        for j in range(0, num_reactions//2):
-            self._add_step("add_solution",
-                        specification = "liquid",
-                        target_zone = {"pump_port": "column_group_4"},
-                        quantity = 0.75,
-                        source_zone = self.available_1wash_zones[j],
-                        source_N2 = {"pump_port": "N2_group_4"},
-                        waste = {"pump_port": "waste_group_4"},
-                        purge_N2 = 6,
-                        delay = 9.0,
-                        rinse = True
-            )
-            #NECESITO CONSIDERAR EL TIEMPO DE ESPERA!!!!
-            self._add_step("add_solution",
-                            specification = "liquid",
-                            target_zone = {"pump_port": "column_group_6"},
-                            quantity = 0.75,
-                            source_zone = {"pump_port": "vial_group_6"},
-                            source_N2 = {"pump_port": "N2_group_6"},
-                            waste = {"pump_port": "waste_group_6"},
-                            purge_N2 = 2,
-                            delay = 10.0,
-                            rinse = True
-            )
-        with open(Path.cwd().parent.parent/'data'/'experimentThree_plan.json', 'w') as f:
             json.dump(self.reaction_steps, f, indent=2)
 
     def generate_rinse_details(self, num_reactions: int, group: int=1, solvent: str = "THF", iterations: int = 3):
