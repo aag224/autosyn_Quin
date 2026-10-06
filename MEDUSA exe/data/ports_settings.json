@@ -1,0 +1,94 @@
+{
+  "pump1_ports": {
+    "Br-Quinoline_group_1": 1,
+    "Boronic_acid_group_1": 2,
+    "Pd_XPhos_G2_group_1": 3,
+    "reaction_group_1": 4,
+    "waste_group_1": 5,
+    "THF_group_1": 6,
+    "K3PO4_group_1": 7,
+    "N2_group_1": 8
+  },
+  "pump2_ports": {
+    "Malonitrile_group_2": 1,
+    "NaHCO3_group_2": 2,
+    "reactive3_group_2": 3,
+    "reaction_group_2": 4,
+    "waste_group_2": 5,
+    "THF_group_2": 6,
+    "NaCl_aq_group_2": 7,
+    "N2_group_2": 8
+  },
+  "pump4_ports": {
+    "wash1_group_4": 1,
+    "wash2_group_4": 2,
+    "wash3_group_4": 3,
+    "column_group_4": 4,
+    "waste_group_4": 5,
+    "THF_group_4": 6,
+    "NaCl_aq_group_4": 7,
+    "N2_group_4": 8
+  },
+    "pump5_ports": {
+    "wash1_group_5": 1,
+    "wash2_group_5": 2,
+    "wash3_group_5": 3,
+    "column_group_5": 4,
+    "waste_group_5": 5,
+    "THF_group_5": 6,
+    "NaCl_aq_group_5": 7,
+    "N2_group_5": 8
+  },
+    "pump6_ports": {
+    "EtOH_group_6": 1,
+    "empty1": 2,
+    "empty2": 3,
+    "vial_group_6": 4,
+    "waste_group_6": 5,
+    "column_group_6": 6,
+    "empty3": 7,
+    "N2_group_6": 8
+  },
+  "valve_ports": [
+    {
+      "reaction1_0": 1,
+      "reaction1_1": 2,
+      "reaction1_2": 3,
+      "reaction1_3": 4,
+      "reaction1_4": 5,
+      "reaction1_5": 6,
+      "reaction1_6": 7,
+      "edge1": 8
+    },
+    {
+      "reaction1_7": 1,
+      "reaction1_8": 2,
+      "reaction1_9": 3,
+      "reaction1_10": 4,
+      "reaction1_11": 5,
+      "reaction1_12": 6,
+      "reaction1_13": 7,
+      "reaction1_14": 8
+    },
+    {
+      "reaction2_0": 1,
+      "reaction2_1": 2,
+      "reaction2_2": 3,
+      "reaction2_3": 4,
+      "reaction2_4": 5,
+      "reaction2_5": 6,
+      "reaction2_6": 7,
+      "edge2": 8
+    },
+    {
+      "reaction2_7": 1,
+      "reaction2_8": 2,
+      "reaction2_9": 3,
+      "reaction2_10": 4,
+      "reaction2_11": 5,
+      "reaction2_12": 6,
+      "reaction2_13": 7,
+      "reaction2_14": 8
+    }
+  ]
+}
