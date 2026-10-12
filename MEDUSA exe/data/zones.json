@@ -1,114 +1,98 @@
 {
-    "reaction1_zone_1": {
-      "content": {
-        "chemical": "reaction_1",
-        "inert_atmosphere": false
-      },
-      "location": {
-        "pump_port": 4,
-        "valve_port": 1
-      },
-      "size": {
-        "min_volume": 0,
-        "max_volume": 8,
-        "current_volume": 0,
-        "addable": true,
-        "drawable": true
-      }
+    "reaction_zone_1": {
+    "content": {"chemical": "reaction_1", "inert_atmosphere": false},
+    "location": {
+      "pump_1": {"pump_port": 4, "valve": "valve_1", "valve_port": 1},
+      "pump_2": {"pump_port": 4, "valve": "valve_2", "valve_port": 1},
+      "pump_3": {"pump_port": 4, "valve": "valve_3", "valve_port": 1}
     },
-    "reaction1_zone_2": {
-      "content": {
-        "chemical": "reaction_2",
-        "inert_atmosphere": false
-      },
-      "location": {
-        "pump_port": 4,
-        "valve_port": 2
-      },
-      "size": {
-        "min_volume": 0,
-        "max_volume": 8,
-        "current_volume": 0,
-        "addable": true,
-        "drawable": true
-      }
+    "size": { 
+      "min_volume": 0, 
+      "max_volume": 8, 
+      "current_volume": 0, 
+      "addable": true, 
+      "drawable": true}
     },
-      "reaction1_zone_3": {
-      "content": {
-        "chemical": "reaction_3",
-        "inert_atmosphere": false
-      },
-      "location": {
-        "pump_port": 4,
-        "valve_port": 3
-      },
-      "size": {
-        "min_volume": 0,
-        "max_volume": 8,
-        "current_volume": 0,
-        "addable": true,
-        "drawable": true
-      }
+    "reaction_zone_2": {
+    "content": {"chemical": "reaction_2", "inert_atmosphere": false},
+    "location": {
+      "pump_1": {"pump_port": 4, "valve": "valve_1", "valve_port": 2},
+      "pump_2": {"pump_port": 4, "valve": "valve_2", "valve_port": 2},
+      "pump_3": {"pump_port": 4, "valve": "valve_3", "valve_port": 2}
     },
-      "reaction1_zone_4": {
-      "content": {
-        "chemical": "reaction_4",
-        "inert_atmosphere": false
-      },
-      "location": {
-        "pump_port": 4,
-        "valve_port": 4
-      },
-      "size": {
-        "min_volume": 0,
-        "max_volume": 8,
-        "current_volume": 0,
-        "addable": true,
-        "drawable": true
-      }
+    "size": { 
+      "min_volume": 0, 
+      "max_volume": 8, 
+      "current_volume": 0, 
+      "addable": true, 
+      "drawable": true}
     },
-      "reaction1_zone_5": {
-      "content": {
-        "chemical": "reaction_5",
-        "inert_atmosphere": false
-      },
-      "location": {
-        "pump_port": 4,
-        "valve_port": 5
-      },
-      "size": {
-        "min_volume": 0,
-        "max_volume": 8,
-        "current_volume": 0,
-        "addable": true,
-        "drawable": true
-      }
+    "reaction_zone_3": {
+    "content": {"chemical": "reaction_3", "inert_atmosphere": false},
+    "location": {
+      "pump_1": {"pump_port": 4, "valve": "valve_1", "valve_port": 3},
+      "pump_2": {"pump_port": 4, "valve": "valve_2", "valve_port": 3},
+      "pump_3": {"pump_port": 4, "valve": "valve_3", "valve_port": 3}
     },
-      "reaction1_zone_6": {
-      "content": {
-        "chemical": "reaction_6",
-        "inert_atmosphere": false
-      },
-      "location": {
-        "pump_port": 1,
-        "valve_port": 2
-      },
-      "size": {
-        "min_volume": 0,
-        "max_volume": 8,
-        "current_volume": 0,
-        "addable": true,
-        "drawable": true
-      }
+    "size": { 
+      "min_volume": 0, 
+      "max_volume": 8, 
+      "current_volume": 0, 
+      "addable": true, 
+      "drawable": true}
+    },    
+    "reaction_zone_4": {
+    "content": {"chemical": "reaction_4", "inert_atmosphere": false},
+    "location": {
+      "pump_1": {"pump_port": 4, "valve": "valve_1", "valve_port": 4},
+      "pump_2": {"pump_port": 4, "valve": "valve_2", "valve_port": 4},
+      "pump_3": {"pump_port": 4, "valve": "valve_3", "valve_port": 4}
+    },
+    "size": { 
+      "min_volume": 0, 
+      "max_volume": 8, 
+      "current_volume": 0, 
+      "addable": true, 
+      "drawable": true}
+    },    
+    "reaction_zone_5": {
+    "content": {"chemical": "reaction_5", "inert_atmosphere": false},
+    "location": {
+      "pump_1": {"pump_port": 4, "valve": "valve_1", "valve_port": 5},
+      "pump_2": {"pump_port": 4, "valve": "valve_2", "valve_port": 5},
+      "pump_3": {"pump_port": 4, "valve": "valve_3", "valve_port": 5}
+    },
+    "size": { 
+      "min_volume": 0, 
+      "max_volume": 8, 
+      "current_volume": 0, 
+      "addable": true, 
+      "drawable": true}
+    },    
+    "reaction_zone_6": {
+    "content": {"chemical": "reaction_6", "inert_atmosphere": false},
+    "location": {
+      "pump_1": {"pump_port": 4, "valve": "valve_1", "valve_port": 6},
+      "pump_2": {"pump_port": 4, "valve": "valve_2", "valve_port": 6},
+      "pump_3": {"pump_port": 4, "valve": "valve_3", "valve_port": 6}
+    },
+    "size": { 
+      "min_volume": 0, 
+      "max_volume": 8, 
+      "current_volume": 0, 
+      "addable": true, 
+      "drawable": true}
     },
     "sample_zone_1": {
       "content": {
-        "chemical": "sample_1",
+        "chemical": "Boronic_acid_1",
         "inert_atmosphere": false
       },
       "location": {
-        "pump_port": 3,
-        "valve_port": 1
+        "pump_1": {
+          "pump_port": 1,
+          "valve": null,
+          "valve_port":null}
       },
       "size": {
         "min_volume": 0,
@@ -120,12 +104,148 @@
     },
     "sample_zone_2": {
       "content": {
-        "chemical": "sample_2",
+        "chemical": "Boronic_acid_2",
         "inert_atmosphere": false
       },
       "location": {
-        "pump_port": 3,
-        "valve_port": 2
+        "pump_1": {
+          "pump_port": 2,
+          "valve": null,
+          "valve_port": null}
+      },
+      "size": {
+        "min_volume": 0,
+        "max_volume": 1.8,
+        "current_volume": 0,
+        "addable": true,
+        "drawable": false
+      }
+    },
+      "sample_zone_3": {
+      "content": {
+        "chemical": "Boronic_acid_3",
+        "inert_atmosphere": false
+      },
+      "location": {
+        "pump_1": {
+          "pump_port": 3,
+          "valve": null,
+          "valve_port": null}
+      },
+      "size": {
+        "min_volume": 0,
+        "max_volume": 1.8,
+        "current_volume": 0,
+        "addable": true,
+        "drawable": false
+      }
+    },
+      "sample_zone_4": {
+      "content": {
+        "chemical": "Br-Quinoline",
+        "inert_atmosphere": false
+      },
+      "location": {
+        "pump_1": {
+          "pump_port": 7,
+          "valve": null,
+          "valve_port": null
+        }
+      },
+      "size": {
+        "min_volume": 0,
+        "max_volume": 1.8,
+        "current_volume": 0,
+        "addable": true,
+        "drawable": false
+      }
+    },
+      "sample_zone_5": {
+      "content": {
+        "chemical": "XPhos",
+        "inert_atmosphere": false
+      },
+      "location": {
+        "pump_2": {
+          "pump_port": 1,
+          "valve": null,
+          "valve_port": null}
+      },
+      "size": {
+        "min_volume": 0,
+        "max_volume": 1.8,
+        "current_volume": 0,
+        "addable": true,
+        "drawable": false
+      }
+    },
+      "sample_zone_6": {
+      "content": {
+        "chemical": "K3PO4",
+        "inert_atmosphere": false
+      },
+      "location": {
+        "pump_2": {
+          "pump_port": 2,
+          "valve": null,
+          "valve_port": null}
+      },
+      "size": {
+        "min_volume": 0,
+        "max_volume": 1.8,
+        "current_volume": 0,
+        "addable": true,
+        "drawable": false
+      }
+    },
+      "sample_zone_7": {
+      "content": {
+        "chemical": "Malononitrile",
+        "inert_atmosphere": false
+      },
+      "location": {
+        "pump_2": {
+          "pump_port": 3,
+          "valve": null,
+          "valve_port": null}
+      },
+      "size": {
+        "min_volume": 0,
+        "max_volume": 1.8,
+        "current_volume": 0,
+        "addable": true,
+        "drawable": false
+      }
+    },
+      "sample_zone_8": {
+      "content": {
+        "chemical": "Indandione",
+        "inert_atmosphere": false
+      },
+      "location": {
+        "pump_2": {
+          "pump_port": 7,
+          "valve": null,
+          "valve_port": null}
+      },
+      "size": {
+        "min_volume": 0,
+        "max_volume": 1.8,
+        "current_volume": 0,
+        "addable": true,
+        "drawable": false
+      }
+    },
+      "sample_zone_9": {
+      "content": {
+        "chemical": "NaHCO3",
+        "inert_atmosphere": false
+      },
+      "location": {
+        "pump_4": {
+          "pump_port": 1,
+          "valve": null,
+          "valve_port": null}
       },
       "size": {
         "min_volume": 0,
@@ -135,4 +255,5 @@
         "drawable": false
       }
     }
-}
+  }
+

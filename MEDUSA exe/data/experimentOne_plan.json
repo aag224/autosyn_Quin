@@ -1,0 +1,1954 @@
+{
+  "1": {
+    "task": "schlenk_cycle",
+    "parameters": {
+      "specification": "gas",
+      "zones": [
+        {
+          "valve_port": "reaction_1_group_1"
+        },
+        {
+          "valve_port": "reaction_2_group_1"
+        },
+        {
+          "valve_port": "reaction_3_group_1"
+        },
+        {
+          "valve_port": "reaction_4_group_1"
+        },
+        {
+          "valve_port": "reaction_5_group_1"
+        },
+        {
+          "valve_port": "reaction_6_group_1"
+        }
+      ],
+      "waste": {
+        "pump_port": "waste_group_1"
+      },
+      "num_cycles": 2,
+      "delay": 1
+    }
+  },
+  "2": {
+    "task": "rinse_syringe",
+    "parameters": {
+      "specification": "liquid",
+      "source_zone": {
+        "pump_port": "THF_group_1"
+      },
+      "waste": {
+        "pump_port": "waste_group_1"
+      },
+      "quantity": 1,
+      "iteration": 3,
+      "delay": 1.0
+    }
+  },
+  "3": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_1_group_1"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "Boronic_acid_1_group_1"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_1"
+      },
+      "waste": {
+        "pump_port": "waste_group_1"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "4": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_2_group_1"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "Boronic_acid_1_group_1"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_1"
+      },
+      "waste": {
+        "pump_port": "waste_group_1"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "5": {
+    "task": "rinse_syringe",
+    "parameters": {
+      "specification": "liquid",
+      "source_zone": {
+        "pump_port": "THF_group_1"
+      },
+      "waste": {
+        "pump_port": "waste_group_1"
+      },
+      "quantity": 1,
+      "iteration": 3,
+      "delay": 1.0
+    }
+  },
+  "6": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_3_group_1"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "Boronic_acid_2_group_1"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_1"
+      },
+      "waste": {
+        "pump_port": "waste_group_1"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "7": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_4_group_1"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "Boronic_acid_2_group_1"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_1"
+      },
+      "waste": {
+        "pump_port": "waste_group_1"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "8": {
+    "task": "rinse_syringe",
+    "parameters": {
+      "specification": "liquid",
+      "source_zone": {
+        "pump_port": "THF_group_1"
+      },
+      "waste": {
+        "pump_port": "waste_group_1"
+      },
+      "quantity": 1,
+      "iteration": 3,
+      "delay": 1.0
+    }
+  },
+  "9": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_5_group_1"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "Boronic_acid_3_group_1"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_1"
+      },
+      "waste": {
+        "pump_port": "waste_group_1"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "10": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_6_group_1"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "Boronic_acid_3_group_1"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_1"
+      },
+      "waste": {
+        "pump_port": "waste_group_1"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "11": {
+    "task": "rinse_syringe",
+    "parameters": {
+      "specification": "liquid",
+      "source_zone": {
+        "pump_port": "THF_group_1"
+      },
+      "waste": {
+        "pump_port": "waste_group_1"
+      },
+      "quantity": 1,
+      "iteration": 3,
+      "delay": 1.0
+    }
+  },
+  "12": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_1_group_1"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "Br-Quinoline_group_1"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_1"
+      },
+      "waste": {
+        "pump_port": "waste_group_1"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "13": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_2_group_1"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "Br-Quinoline_group_1"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_1"
+      },
+      "waste": {
+        "pump_port": "waste_group_1"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "14": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_3_group_1"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "Br-Quinoline_group_1"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_1"
+      },
+      "waste": {
+        "pump_port": "waste_group_1"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "15": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_4_group_1"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "Br-Quinoline_group_1"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_1"
+      },
+      "waste": {
+        "pump_port": "waste_group_1"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "16": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_5_group_1"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "Br-Quinoline_group_1"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_1"
+      },
+      "waste": {
+        "pump_port": "waste_group_1"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "17": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_6_group_1"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "Br-Quinoline_group_1"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_1"
+      },
+      "waste": {
+        "pump_port": "waste_group_1"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "18": {
+    "task": "rinse_syringe",
+    "parameters": {
+      "specification": "liquid",
+      "source_zone": {
+        "pump_port": "THF_group_1"
+      },
+      "waste": {
+        "pump_port": "waste_group_1"
+      },
+      "quantity": 1,
+      "iteration": 3,
+      "delay": 1.0
+    }
+  },
+  "19": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_1_group_2"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "Pd_XPhos_G2_group_2"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_2"
+      },
+      "waste": {
+        "pump_port": "waste_group_2"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "20": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_2_group_2"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "Pd_XPhos_G2_group_2"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_2"
+      },
+      "waste": {
+        "pump_port": "waste_group_2"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "21": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_3_group_2"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "Pd_XPhos_G2_group_2"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_2"
+      },
+      "waste": {
+        "pump_port": "waste_group_2"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "22": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_4_group_2"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "Pd_XPhos_G2_group_2"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_2"
+      },
+      "waste": {
+        "pump_port": "waste_group_2"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "23": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_5_group_2"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "Pd_XPhos_G2_group_2"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_2"
+      },
+      "waste": {
+        "pump_port": "waste_group_2"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "24": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_6_group_2"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "Pd_XPhos_G2_group_2"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_2"
+      },
+      "waste": {
+        "pump_port": "waste_group_2"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "25": {
+    "task": "rinse_syringe",
+    "parameters": {
+      "specification": "liquid",
+      "source_zone": {
+        "pump_port": "THF_group_2"
+      },
+      "waste": {
+        "pump_port": "waste_group_2"
+      },
+      "quantity": 1,
+      "iteration": 3,
+      "delay": 1.0
+    }
+  },
+  "26": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_1_group_2"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "K3PO4_group_2"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_2"
+      },
+      "waste": {
+        "pump_port": "waste_group_2"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "27": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_2_group_2"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "K3PO4_group_2"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_2"
+      },
+      "waste": {
+        "pump_port": "waste_group_2"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "28": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_3_group_2"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "K3PO4_group_2"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_2"
+      },
+      "waste": {
+        "pump_port": "waste_group_2"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "29": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_4_group_2"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "K3PO4_group_2"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_2"
+      },
+      "waste": {
+        "pump_port": "waste_group_2"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "30": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_5_group_2"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "K3PO4_group_2"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_2"
+      },
+      "waste": {
+        "pump_port": "waste_group_2"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "31": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_6_group_2"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "K3PO4_group_2"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_2"
+      },
+      "waste": {
+        "pump_port": "waste_group_2"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "32": {
+    "task": "rinse_syringe",
+    "parameters": {
+      "specification": "liquid",
+      "source_zone": {
+        "pump_port": "THF_group_2"
+      },
+      "waste": {
+        "pump_port": "waste_group_2"
+      },
+      "quantity": 1,
+      "iteration": 3,
+      "delay": 1.0
+    }
+  },
+  "33": {
+    "task": "heat_and_stir_ON",
+    "parameters": {
+      "temp": 65,
+      "rpm": 800,
+      "hotplate": "hotplate3"
+    }
+  },
+  "34": {
+    "task": "heat_and_stir_ON",
+    "parameters": {
+      "temp": 65,
+      "rpm": 800,
+      "hotplate": "hotplate2"
+    }
+  },
+  "35": {
+    "task": "heat_and_stir_ON",
+    "parameters": {
+      "temp": 65,
+      "rpm": 800,
+      "hotplate": "hotplate1",
+      "wait": 0.033
+    }
+  },
+  "36": {
+    "task": "heat_and_stir_OFF",
+    "parameters": {
+      "hotplate": "hotplate1",
+      "wait": 0.5
+    }
+  },
+  "37": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_1_group_2"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "Malononitrile_group_2"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_2"
+      },
+      "waste": {
+        "pump_port": "waste_group_2"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "38": {
+    "task": "rinse_syringe",
+    "parameters": {
+      "specification": "liquid",
+      "source_zone": {
+        "pump_port": "THF_group_2"
+      },
+      "waste": {
+        "pump_port": "waste_group_2"
+      },
+      "quantity": 1,
+      "iteration": 3,
+      "delay": 1.0
+    }
+  },
+  "39": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_1_group_2"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "Indandione_group_2"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_2"
+      },
+      "waste": {
+        "pump_port": "waste_group_2"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "40": {
+    "task": "rinse_syringe",
+    "parameters": {
+      "specification": "liquid",
+      "source_zone": {
+        "pump_port": "THF_group_2"
+      },
+      "waste": {
+        "pump_port": "waste_group_2"
+      },
+      "quantity": 1,
+      "iteration": 3,
+      "delay": 1.0
+    }
+  },
+  "41": {
+    "task": "heat_and_stir_ON",
+    "parameters": {
+      "temp": 0,
+      "rpm": 800,
+      "hotplate": "hotplate1",
+      "wait": 1
+    }
+  },
+  "42": {
+    "task": "heat_and_stir_OFF",
+    "parameters": {
+      "hotplate": "hotplate1"
+    }
+  },
+  "43": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "waste_group_4"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "valve_port": "reaction_1_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "44": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_1_group_4"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "NaCl_aq_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "45": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "waste_group_4"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "valve_port": "reaction_1_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "46": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "column_group_4"
+      },
+      "quantity": 1.75,
+      "source_zone": {
+        "valve_port": "reaction_1_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 10,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "47": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_1_group_4"
+      },
+      "quantity": 1.75,
+      "source_zone": {
+        "pump_port": "THF_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 10,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "48": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "column_group_4"
+      },
+      "quantity": 1.75,
+      "source_zone": {
+        "valve_port": "reaction_1_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 10,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "49": {
+    "task": "heat_and_stir_ON",
+    "parameters": {
+      "temp": 65,
+      "rpm": 800,
+      "hotplate": "hotplate1",
+      "sleep": 0.66
+    }
+  },
+  "50": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "column_group_4"
+      },
+      "quantity": 3,
+      "source_zone": {
+        "pump_port": "EtOH_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 10,
+      "delay": 7.0,
+      "rinse": false,
+      "sleep": 0.33
+    }
+  },
+  "51": {
+    "task": "heat_and_stir_OFF",
+    "parameters": {
+      "hotplate": "hotplate1",
+      "wait": 0.5
+    }
+  },
+  "52": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "waste_group_4"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "valve_port": "reaction_2_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "53": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_2_group_4"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "NaCl_aq_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "54": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "waste_group_4"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "valve_port": "reaction_2_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "55": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "column_group_4"
+      },
+      "quantity": 1.75,
+      "source_zone": {
+        "valve_port": "reaction_2_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 10,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "56": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_2_group_4"
+      },
+      "quantity": 1.75,
+      "source_zone": {
+        "pump_port": "THF_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 10,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "57": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "column_group_4"
+      },
+      "quantity": 1.75,
+      "source_zone": {
+        "valve_port": "reaction_2_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 10,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "58": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "column_group_4"
+      },
+      "quantity": 3,
+      "source_zone": {
+        "pump_port": "EtOH_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 10,
+      "delay": 7.0,
+      "rinse": false,
+      "sleep": 9.5
+    }
+  },
+  "59": {
+    "task": "heat_and_stir_OFF",
+    "parameters": {
+      "hotplate": "hotplate2",
+      "wait": 0.5
+    }
+  },
+  "60": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_3_group_2"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "Malononitrile_group_2"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_2"
+      },
+      "waste": {
+        "pump_port": "waste_group_2"
+      },
+      "purge_N2": 10,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "61": {
+    "task": "rinse_syringe",
+    "parameters": {
+      "specification": "liquid",
+      "source_zone": {
+        "pump_port": "THF_group_2"
+      },
+      "waste": {
+        "pump_port": "waste_group_2"
+      },
+      "quantity": 1,
+      "iteration": 3,
+      "delay": 1.0
+    }
+  },
+  "62": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_4_group_2"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "Indandione_group_2"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_2"
+      },
+      "waste": {
+        "pump_port": "waste_group_2"
+      },
+      "purge_N2": 10,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "63": {
+    "task": "rinse_syringe",
+    "parameters": {
+      "specification": "liquid",
+      "source_zone": {
+        "pump_port": "THF_group_2"
+      },
+      "waste": {
+        "pump_port": "waste_group_2"
+      },
+      "quantity": 1,
+      "iteration": 3,
+      "delay": 1.0
+    }
+  },
+  "64": {
+    "task": "heat_and_stir_ON",
+    "parameters": {
+      "temp": 0,
+      "rpm": 800,
+      "hotplate": "hotplate2",
+      "sleep": 2
+    }
+  },
+  "65": {
+    "task": "heat_and_stir_OFF",
+    "parameters": {
+      "hotplate": "hotplate2"
+    }
+  },
+  "66": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "waste_group_4"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "valve_port": "reaction_3_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "67": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_3_group_4"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "NaCl_aq_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "68": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "waste_group_4"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "valve_port": "reaction_3_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "69": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "column_group_4"
+      },
+      "quantity": 1.75,
+      "source_zone": {
+        "valve_port": "reaction_3_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 10,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "70": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_3_group_4"
+      },
+      "quantity": 1.75,
+      "source_zone": {
+        "pump_port": "THF_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 10,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "71": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "column_group_4"
+      },
+      "quantity": 1.75,
+      "source_zone": {
+        "valve_port": "reaction_3_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 10,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "72": {
+    "task": "heat_and_stir_ON",
+    "parameters": {
+      "temp": 0,
+      "rpm": 800,
+      "hotplate": "hotplate2",
+      "sleep": 0.66
+    }
+  },
+  "73": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "column_group_4"
+      },
+      "quantity": 3,
+      "source_zone": {
+        "pump_port": "EtOH_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 10,
+      "delay": 7.0,
+      "rinse": false,
+      "sleep": 1.33
+    }
+  },
+  "74": {
+    "task": "heat_and_stir_OFF",
+    "parameters": {
+      "hotplate": "hotplate2"
+    }
+  },
+  "75": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "waste_group_4"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "valve_port": "reaction_4_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "76": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_4_group_4"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "NaCl_aq_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "77": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "waste_group_4"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "valve_port": "reaction_4_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "78": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "column_group_4"
+      },
+      "quantity": 1.75,
+      "source_zone": {
+        "valve_port": "reaction_4_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 10,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "79": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_4_group_4"
+      },
+      "quantity": 1.75,
+      "source_zone": {
+        "pump_port": "THF_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 10,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "80": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "column_group_4"
+      },
+      "quantity": 1.75,
+      "source_zone": {
+        "valve_port": "reaction_4_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 10,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "81": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "column_group_4"
+      },
+      "quantity": 3,
+      "source_zone": {
+        "pump_port": "EtOH_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 10,
+      "delay": 7.0,
+      "rinse": false,
+      "sleep": 10
+    }
+  },
+  "82": {
+    "task": "heat_and_stir_OFF",
+    "parameters": {
+      "hotplate": "hotplate3",
+      "wait": 0.5
+    }
+  },
+  "83": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_5_group_2"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "Malononitrile_group_2"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_2"
+      },
+      "waste": {
+        "pump_port": "waste_group_2"
+      },
+      "purge_N2": 10,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "84": {
+    "task": "rinse_syringe",
+    "parameters": {
+      "specification": "liquid",
+      "source_zone": {
+        "pump_port": "THF_group_2"
+      },
+      "waste": {
+        "pump_port": "waste_group_2"
+      },
+      "quantity": 1,
+      "iteration": 3,
+      "delay": 1.0
+    }
+  },
+  "85": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_6_group_2"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "Indandione_group_2"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_2"
+      },
+      "waste": {
+        "pump_port": "waste_group_2"
+      },
+      "purge_N2": 10,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "86": {
+    "task": "rinse_syringe",
+    "parameters": {
+      "specification": "liquid",
+      "source_zone": {
+        "pump_port": "THF_group_2"
+      },
+      "waste": {
+        "pump_port": "waste_group_2"
+      },
+      "quantity": 1,
+      "iteration": 3,
+      "delay": 1.0
+    }
+  },
+  "87": {
+    "task": "heat_and_stir_ON",
+    "parameters": {
+      "temp": 0,
+      "rpm": 800,
+      "hotplate": "hotplate2",
+      "sleep": 2
+    }
+  },
+  "88": {
+    "task": "heat_and_stir_OFF",
+    "parameters": {
+      "hotplate": "hotplate2"
+    }
+  },
+  "89": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "waste_group_4"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "valve_port": "reaction_5_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "90": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_5_group_4"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "NaCl_aq_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "91": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "waste_group_4"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "valve_port": "reaction_5_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "92": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "column_group_4"
+      },
+      "quantity": 1.75,
+      "source_zone": {
+        "valve_port": "reaction_5_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 10,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "93": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_5_group_4"
+      },
+      "quantity": 1.75,
+      "source_zone": {
+        "pump_port": "THF_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 10,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "94": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "column_group_4"
+      },
+      "quantity": 1.75,
+      "source_zone": {
+        "valve_port": "reaction_5_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 10,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "95": {
+    "task": "heat_and_stir_ON",
+    "parameters": {
+      "temp": 0,
+      "rpm": 800,
+      "hotplate": "hotplate3",
+      "sleep": 0.66
+    }
+  },
+  "96": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "column_group_4"
+      },
+      "quantity": 3,
+      "source_zone": {
+        "pump_port": "EtOH_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 10,
+      "delay": 7.0,
+      "rinse": false,
+      "sleep": 1.33
+    }
+  },
+  "97": {
+    "task": "heat_and_stir_OFF",
+    "parameters": {
+      "hotplate": "hotplate3"
+    }
+  },
+  "98": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "waste_group_4"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "valve_port": "reaction_6_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "99": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_6_group_4"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "pump_port": "NaCl_aq_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "100": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "waste_group_4"
+      },
+      "quantity": 0.75,
+      "source_zone": {
+        "valve_port": "reaction_6_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 2,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "101": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "column_group_4"
+      },
+      "quantity": 1.75,
+      "source_zone": {
+        "valve_port": "reaction_6_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 10,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "102": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "valve_port": "reaction_6_group_4"
+      },
+      "quantity": 1.75,
+      "source_zone": {
+        "pump_port": "THF_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 10,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "103": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "column_group_4"
+      },
+      "quantity": 1.75,
+      "source_zone": {
+        "valve_port": "reaction_6_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 10,
+      "delay": 7.0,
+      "rinse": false
+    }
+  },
+  "104": {
+    "task": "add_solution",
+    "parameters": {
+      "specification": "liquid",
+      "target_zone": {
+        "pump_port": "column_group_4"
+      },
+      "quantity": 3,
+      "source_zone": {
+        "pump_port": "EtOH_group_4"
+      },
+      "source_N2": {
+        "pump_port": "N2_group_4"
+      },
+      "waste": {
+        "pump_port": "waste_group_4"
+      },
+      "purge_N2": 10,
+      "delay": 7.0,
+      "rinse": false
+    }
+  }
+}
