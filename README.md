@@ -78,7 +78,7 @@ The setup is organized in **groups**: each group is one pump plus its selection 
 |---|---|---|
 | Group 1 | Coupling substrates | Boronic acids 1–3, Br-quinoline, THF, N₂, waste |
 | Group 2 | Catalyst, base and second step | Pd XPhos G2, K₃PO₄, malononitrile, indandione, THF, N₂, waste |
-| Group 4 | Work-up and purification | NaHCO₃, NaCl (aq), EtOH, THF, flash column, N₂, waste |
+| Group 3 | Work-up and purification | NaHCO₃, NaCl (aq), EtOH, THF, flash column, N₂, waste |
 
 ### Files
 

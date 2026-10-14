@@ -25,18 +25,18 @@
         "Indandione_group_2": 7,
         "N2_group_2": 8
   }},   
-  "pump4": {
+  "pump3": {
      "com_port": "COM3",
       "address": 4,
       "ports": {
-        "NaHCO3_group_4": 1,
-        "EtOH_group_4": 2,
-        "THF_group_4": 3,
-        "reaction_group_4": 4,
-        "waste_group_4": 5,
-        "column_group_4": 6,
-        "NaCl_aq_group_4": 7,
-        "N2_group_4": 8
+        "NaHCO3_group_3": 1,
+        "EtOH_group_3": 2,
+        "THF_group_3": 3,
+        "reaction_group_3": 4,
+        "waste_group_3": 5,
+        "column_group_3": 6,
+        "NaCl_aq_group_3": 7,
+        "N2_group_3": 8
   }}},
   "valves": {
     "valve1": {

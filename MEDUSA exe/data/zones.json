@@ -242,7 +242,7 @@
         "inert_atmosphere": false
       },
       "location": {
-        "pump_4": {
+        "pump_3": {
           "pump_port": 1,
           "valve": null,
           "valve_port": null}

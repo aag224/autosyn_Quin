@@ -19,7 +19,7 @@ class BaseProcedures(object):
         self.GROUPS = {
             "_group_1": ("pump1", "valve1"),
             "_group_2": ("pump2", "valve2"),
-            "_group_4": ("pump3", "valve3"),
+            "_group_3": ("pump3", "valve3"),
         }
 
     def _load_ports_settings(self):
@@ -65,10 +65,10 @@ class BaseProcedures(object):
                 pump_port = self.pumps["pump2"].switch_port(port=zone['pump_port'])
                 print(f"Fluid connection built for \n"
                       f"Pump 2 port {zone['pump_port']} at {pump_port}\n")
-            elif "_group_4" in zone["pump_port"]:
-                pump_port = self.pumps["pump4"].switch_port(port=zone['pump_port'])
+            elif "_group_3" in zone["pump_port"]:
+                pump_port = self.pumps["pump3"].switch_port(port=zone['pump_port'])
                 print(f"Fluid connection built for \n"
-                      f"Pump 4 port {zone['pump_port']} at {pump_port}\n")
+                      f"Pump 3 port {zone['pump_port']} at {pump_port}\n")
         elif "valve_port" in zone:
             if "_group_1" in zone["valve_port"]: 
                 valve_port = self.valves["valve1"].switch_port(
@@ -81,9 +81,9 @@ class BaseProcedures(object):
                 self.pumps["pump2"].switch_port(port="reaction_group_2")
                 print(f"Fluid connection built for \n"
                       f"Valve 2 port {zone['valve_port']} at {valve_port}")
-            elif "_group_4" in zone["valve_port"]:
+            elif "_group_3" in zone["valve_port"]:
                 valve_port = self.valves["valve3"].switch_port(port=zone['valve_port'])
-                self.pumps["pump4"].switch_port(port="reaction_group_4")
+                self.pumps["pump3"].switch_port(port="reaction_group_3")
                 print(f"Fluid connection built for \n"
                       f"Valve 3 port {zone['valve_port']} at {valve_port}")
 
@@ -108,15 +108,15 @@ class BaseProcedures(object):
                 self.pump = self.pumps['pump1']
             elif "_group_2" in source_zone['pump_port']:
                 self.pump = self.pumps["pump2"]
-            elif "_group_4" in source_zone['pump_port']:
-                self.pump = self.pumps["pump4"]
+            elif "_group_3" in source_zone['pump_port']:
+                self.pump = self.pumps["pump3"]
         elif 'valve_port' in source_zone:
             if "_group_1" in source_zone['valve_port']:
                 self.pump = self.pumps['pump1']
             elif "_group_2" in source_zone['valve_port']:
                 self.pump = self.pumps["pump2"]
-            elif "_group_4" in source_zone['valve_port']:
-                self.pump = self.pumps["pump4"]
+            elif "_group_3" in source_zone['valve_port']:
+                self.pump = self.pumps["pump3"]
         else:
             raise ValueError("No pump or valve valid selected")
 
@@ -297,16 +297,16 @@ class Reaction(BaseProcedures):
     def generate_experiment_One_details(self, num_reactions: int, temp=65):
         self.available_reaction_zones_group1 = []
         self.available_reaction_zones_group2 = []
-        self.available_reaction_zones_group4 = []
-        self.available_1wash_zones_group4 = []
+        self.available_reaction_zones_group3 = []
+        self.available_1wash_zones_group3 = []
         if num_reactions > 6:
             raise ValueError("You can't run more than 6 reactions with this setup.")
 
         for i in range(0, num_reactions):
             self.available_reaction_zones_group1.append({"valve_port": f"reaction_{i + 1}_group_1", })
             self.available_reaction_zones_group2.append({"valve_port": f"reaction_{i + 1}_group_2", })
-            self.available_reaction_zones_group4.append({"valve_port": f"reaction_{i + 1}_group_4"})
-            self.available_1wash_zones_group4.append({"valve_port": f"reaction_{i + 1}_group_4"})
+            self.available_reaction_zones_group3.append({"valve_port": f"reaction_{i + 1}_group_3"})
+            self.available_1wash_zones_group3.append({"valve_port": f"reaction_{i + 1}_group_3"})
 
         self.reaction_steps = {
             "1": {
@@ -529,11 +529,11 @@ class Reaction(BaseProcedures):
         # Remove aqueous solution reaction 1
         self._add_step("add_solution",
                         specification = "liquid",
-                        target_zone = {"pump_port": "waste_group_4"},
-                        quantity = 0.75, # ----->  Verificar este volumen!!!
-                        source_zone = self.available_1wash_zones_group4[0],
-                        source_N2 = {"pump_port": "N2_group_4"},
-                        waste = {"pump_port": "waste_group_4"},
+                        target_zone = {"pump_port": "waste_group_3"},
+                        quantity = 0.75,
+                        source_zone = self.available_1wash_zones_group3[0],
+                        source_N2 = {"pump_port": "N2_group_3"},
+                        waste = {"pump_port": "waste_group_3"},
                         purge_N2 = 2,
                         delay = 7.0,
                         rinse = False
@@ -541,11 +541,11 @@ class Reaction(BaseProcedures):
         # Wash with NaCl aq
         self._add_step("add_solution",
                         specification = "liquid",
-                        target_zone = self.available_1wash_zones_group4[0],
+                        target_zone = self.available_1wash_zones_group3[0],
                         quantity = 0.75,
-                        source_zone = {"pump_port": "NaCl_aq_group_4"},
-                        source_N2 = {"pump_port": "N2_group_4"},
-                        waste = {"pump_port": "waste_group_4"},
+                        source_zone = {"pump_port": "NaCl_aq_group_3"},
+                        source_N2 = {"pump_port": "N2_group_3"},
+                        waste = {"pump_port": "waste_group_3"},
                         purge_N2 = 2,
                         delay = 7.0,
                         rinse = False
@@ -553,11 +553,11 @@ class Reaction(BaseProcedures):
         # Remove aqueous phase
         self._add_step("add_solution",
                                 specification = "liquid",
-                                target_zone = {"pump_port": "waste_group_4"},
+                                target_zone = {"pump_port": "waste_group_3"},
                                 quantity = 0.75,
-                                source_zone = self.available_1wash_zones_group4[0],
-                                source_N2 = {"pump_port": "N2_group_4"},
-                                waste = {"pump_port": "waste_group_4"},
+                                source_zone = self.available_1wash_zones_group3[0],
+                                source_N2 = {"pump_port": "N2_group_3"},
+                                waste = {"pump_port": "waste_group_3"},
                                 purge_N2 = 2,
                                 delay = 7.0,
                                 rinse = True
@@ -565,11 +565,11 @@ class Reaction(BaseProcedures):
         # Organic phase to Flash
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone={"pump_port": "column_group_4"},
+                       target_zone={"pump_port": "column_group_3"},
                        quantity=1.75,
-                       source_zone=self.available_reaction_zones_group4[0],
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone=self.available_reaction_zones_group3[0],
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=10,
                        delay=7.0,
                        rinse=False,
@@ -577,11 +577,11 @@ class Reaction(BaseProcedures):
         # Clean the vial
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone=self.available_reaction_zones_group4[0],
+                       target_zone=self.available_reaction_zones_group3[0],
                        quantity=1.75,
-                       source_zone={"pump_port": "THF_group_4"},
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone={"pump_port": "THF_group_3"},
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=10,
                        delay=7.0,
                        rinse=False
@@ -589,11 +589,11 @@ class Reaction(BaseProcedures):
         # Residues to Flash
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone={"pump_port": "column_group_4"},
+                       target_zone={"pump_port": "column_group_3"},
                        quantity=1.75,
-                       source_zone=self.available_reaction_zones_group4[0],
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone=self.available_reaction_zones_group3[0],
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=10,
                        delay=7.0,
                        rinse=False
@@ -608,11 +608,11 @@ class Reaction(BaseProcedures):
         # Clean Flash column
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone={"pump_port": "column_group_4"},
+                       target_zone={"pump_port": "column_group_3"},
                        quantity=3,
-                       source_zone={"pump_port": "EtOH_group_4"},
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone={"pump_port": "EtOH_group_3"},
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=10,
                        delay=7.0,
                        rinse=False,
@@ -625,11 +625,11 @@ class Reaction(BaseProcedures):
         # Remove aqueous solution reaction 2
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone={"pump_port": "waste_group_4"},
+                       target_zone={"pump_port": "waste_group_3"},
                        quantity=0.75,  # ----->  Verificar este volumen!!!
-                       source_zone=self.available_1wash_zones_group4[1],
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone=self.available_1wash_zones_group3[1],
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=2,
                        delay=7.0,
                        rinse=False
@@ -637,11 +637,11 @@ class Reaction(BaseProcedures):
         # Wash with NaCl aq
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone=self.available_1wash_zones_group4[1],
+                       target_zone=self.available_1wash_zones_group3[1],
                        quantity=0.75,
-                       source_zone={"pump_port": "NaCl_aq_group_4"},
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone={"pump_port": "NaCl_aq_group_3"},
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=2,
                        delay=7.0,
                        rinse=False
@@ -649,11 +649,11 @@ class Reaction(BaseProcedures):
         # Remove aqueous phase
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone={"pump_port": "waste_group_4"},
+                       target_zone={"pump_port": "waste_group_3"},
                        quantity=0.75,
-                       source_zone=self.available_1wash_zones_group4[1],
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone=self.available_1wash_zones_group3[1],
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=2,
                        delay=7.0,
                        rinse=False
@@ -661,11 +661,11 @@ class Reaction(BaseProcedures):
         # Organic phase to Flash
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone={"pump_port": "column_group_4"},
+                       target_zone={"pump_port": "column_group_3"},
                        quantity=1.75,
-                       source_zone=self.available_reaction_zones_group4[1],
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone=self.available_reaction_zones_group3[1],
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=10,
                        delay=7.0,
                        rinse=False,
@@ -673,11 +673,11 @@ class Reaction(BaseProcedures):
         # Clean the vial
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone=self.available_reaction_zones_group4[1],
+                       target_zone=self.available_reaction_zones_group3[1],
                        quantity=1.75,
-                       source_zone={"pump_port": "THF_group_4"},
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone={"pump_port": "THF_group_3"},
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=10,
                        delay=7.0,
                        rinse=False
@@ -685,11 +685,11 @@ class Reaction(BaseProcedures):
         # Residues to Flash
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone={"pump_port": "column_group_4"},
+                       target_zone={"pump_port": "column_group_3"},
                        quantity=1.75,
-                       source_zone=self.available_reaction_zones_group4[1],
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone=self.available_reaction_zones_group3[1],
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=10,
                        delay=7.0,
                        rinse=False
@@ -697,11 +697,11 @@ class Reaction(BaseProcedures):
         # Clean Flash column
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone={"pump_port": "column_group_4"},
+                       target_zone={"pump_port": "column_group_3"},
                        quantity=3,
-                       source_zone={"pump_port": "EtOH_group_4"},
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone={"pump_port": "EtOH_group_3"},
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=10,
                        delay=7.0,
                        rinse=False,
@@ -765,11 +765,11 @@ class Reaction(BaseProcedures):
         # Remove aqueous solution reaction 3
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone={"pump_port": "waste_group_4"},
+                       target_zone={"pump_port": "waste_group_3"},
                        quantity=0.75,  # ----->  Verificar este volumen!!!
-                       source_zone=self.available_1wash_zones_group4[2],
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone=self.available_1wash_zones_group3[2],
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=2,
                        delay=7.0,
                        rinse=False
@@ -777,11 +777,11 @@ class Reaction(BaseProcedures):
         # Wash with NaCl aq
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone=self.available_1wash_zones_group4[2],
+                       target_zone=self.available_1wash_zones_group3[2],
                        quantity=0.75,
-                       source_zone={"pump_port": "NaCl_aq_group_4"},
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone={"pump_port": "NaCl_aq_group_3"},
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=2,
                        delay=7.0,
                        rinse=False
@@ -789,11 +789,11 @@ class Reaction(BaseProcedures):
         # Remove aqueous phase
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone={"pump_port": "waste_group_4"},
+                       target_zone={"pump_port": "waste_group_3"},
                        quantity=0.75,
-                       source_zone=self.available_1wash_zones_group4[2],
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone=self.available_1wash_zones_group3[2],
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=2,
                        delay=7.0,
                        rinse=False
@@ -801,11 +801,11 @@ class Reaction(BaseProcedures):
         # Organic phase to Flash
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone={"pump_port": "column_group_4"},
+                       target_zone={"pump_port": "column_group_3"},
                        quantity=1.75,
-                       source_zone=self.available_reaction_zones_group4[2],
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone=self.available_reaction_zones_group3[2],
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=10,
                        delay=7.0,
                        rinse=False,
@@ -813,11 +813,11 @@ class Reaction(BaseProcedures):
         # Clean the vial
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone=self.available_reaction_zones_group4[2],
+                       target_zone=self.available_reaction_zones_group3[2],
                        quantity=1.75,
-                       source_zone={"pump_port": "THF_group_4"},
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone={"pump_port": "THF_group_3"},
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=10,
                        delay=7.0,
                        rinse=False
@@ -825,11 +825,11 @@ class Reaction(BaseProcedures):
         # Residues to Flash
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone={"pump_port": "column_group_4"},
+                       target_zone={"pump_port": "column_group_3"},
                        quantity=1.75,
-                       source_zone=self.available_reaction_zones_group4[2],
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone=self.available_reaction_zones_group3[2],
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=10,
                        delay=7.0,
                        rinse=False
@@ -844,11 +844,11 @@ class Reaction(BaseProcedures):
         # Clean Flash column
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone={"pump_port": "column_group_4"},
+                       target_zone={"pump_port": "column_group_3"},
                        quantity=3,
-                       source_zone={"pump_port": "EtOH_group_4"},
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone={"pump_port": "EtOH_group_3"},
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=10,
                        delay=7.0,
                        rinse=False,
@@ -860,11 +860,11 @@ class Reaction(BaseProcedures):
         # Remove aqueous solution reaction 4
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone={"pump_port": "waste_group_4"},
+                       target_zone={"pump_port": "waste_group3_"},
                        quantity=0.75,  # ----->  Verificar este volumen!!!
-                       source_zone=self.available_1wash_zones_group4[3],
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone=self.available_1wash_zones_group3[3],
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=2,
                        delay=7.0,
                        rinse=False
@@ -872,11 +872,11 @@ class Reaction(BaseProcedures):
         # Wash with NaCl aq
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone=self.available_1wash_zones_group4[3],
+                       target_zone=self.available_1wash_zones_group3[3],
                        quantity=0.75,
-                       source_zone={"pump_port": "NaCl_aq_group_4"},
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone={"pump_port": "NaCl_aq_group_3"},
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=2,
                        delay=7.0,
                        rinse=False
@@ -884,11 +884,11 @@ class Reaction(BaseProcedures):
         # Remove aqueous phase
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone={"pump_port": "waste_group_4"},
+                       target_zone={"pump_port": "waste_group_3"},
                        quantity=0.75,
-                       source_zone=self.available_1wash_zones_group4[3],
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone=self.available_1wash_zones_group3[3],
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=2,
                        delay=7.0,
                        rinse=False
@@ -896,11 +896,11 @@ class Reaction(BaseProcedures):
         # Organic phase to Flash
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone={"pump_port": "column_group_4"},
+                       target_zone={"pump_port": "column_group_3"},
                        quantity=1.75,
-                       source_zone=self.available_reaction_zones_group4[3],
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone=self.available_reaction_zones_group3[3],
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=10,
                        delay=7.0,
                        rinse=False,
@@ -908,11 +908,11 @@ class Reaction(BaseProcedures):
         # Clean the vial
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone=self.available_reaction_zones_group4[3],
+                       target_zone=self.available_reaction_zones_group3[3],
                        quantity=1.75,
-                       source_zone={"pump_port": "THF_group_4"},
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone={"pump_port": "THF_group_3"},
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=10,
                        delay=7.0,
                        rinse=False
@@ -920,11 +920,11 @@ class Reaction(BaseProcedures):
         # Residues to Flash
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone={"pump_port": "column_group_4"},
+                       target_zone={"pump_port": "column_group_3"},
                        quantity=1.75,
-                       source_zone=self.available_reaction_zones_group4[3],
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone=self.available_reaction_zones_group3[3],
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=10,
                        delay=7.0,
                        rinse=False
@@ -932,11 +932,11 @@ class Reaction(BaseProcedures):
         # Clean Flash column
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone={"pump_port": "column_group_4"},
+                       target_zone={"pump_port": "column_group_3"},
                        quantity=3,
-                       source_zone={"pump_port": "EtOH_group_4"},
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone={"pump_port": "EtOH_group_3"},
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=10,
                        delay=7.0,
                        rinse=False,
@@ -1000,11 +1000,11 @@ class Reaction(BaseProcedures):
         # Remove aqueous solution reaction 5
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone={"pump_port": "waste_group_4"},
+                       target_zone={"pump_port": "waste_group_3"},
                        quantity=0.75,  # ----->  Verificar este volumen!!!
-                       source_zone=self.available_1wash_zones_group4[4],
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone=self.available_1wash_zones_group3[4],
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=2,
                        delay=7.0,
                        rinse=False
@@ -1012,11 +1012,11 @@ class Reaction(BaseProcedures):
         # Wash with NaCl aq
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone=self.available_1wash_zones_group4[4],
+                       target_zone=self.available_1wash_zones_group3[4],
                        quantity=0.75,
-                       source_zone={"pump_port": "NaCl_aq_group_4"},
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone={"pump_port": "NaCl_aq_group_3"},
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=2,
                        delay=7.0,
                        rinse=False
@@ -1024,11 +1024,11 @@ class Reaction(BaseProcedures):
         # Remove aqueous phase
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone={"pump_port": "waste_group_4"},
+                       target_zone={"pump_port": "waste_group_3"},
                        quantity=0.75,
-                       source_zone=self.available_1wash_zones_group4[4],
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone=self.available_1wash_zones_group3[4],
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=2,
                        delay=7.0,
                        rinse=True
@@ -1036,11 +1036,11 @@ class Reaction(BaseProcedures):
         # Organic phase to Flash
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone={"pump_port": "column_group_4"},
+                       target_zone={"pump_port": "column_group_3"},
                        quantity=1.75,
-                       source_zone=self.available_reaction_zones_group4[4],
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone=self.available_reaction_zones_group3[4],
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=10,
                        delay=7.0,
                        rinse=False,
@@ -1048,11 +1048,11 @@ class Reaction(BaseProcedures):
         # Clean the vial
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone=self.available_reaction_zones_group4[4],
+                       target_zone=self.available_reaction_zones_group3[4],
                        quantity=1.75,
-                       source_zone={"pump_port": "THF_group_4"},
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone={"pump_port": "THF_group_3"},
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=10,
                        delay=7.0,
                        rinse=False
@@ -1060,11 +1060,11 @@ class Reaction(BaseProcedures):
         # Residues to Flash
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone={"pump_port": "column_group_4"},
+                       target_zone={"pump_port": "column_group_3"},
                        quantity=1.75,
-                       source_zone=self.available_reaction_zones_group4[4],
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone=self.available_reaction_zones_group3[4],
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=10,
                        delay=7.0,
                        rinse=False
@@ -1079,11 +1079,11 @@ class Reaction(BaseProcedures):
         # Clean Flash column
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone={"pump_port": "column_group_4"},
+                       target_zone={"pump_port": "column_group_3"},
                        quantity=3,
-                       source_zone={"pump_port": "EtOH_group_4"},
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone={"pump_port": "EtOH_group_3"},
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=10,
                        delay=7.0,
                        rinse=False,
@@ -1095,11 +1095,11 @@ class Reaction(BaseProcedures):
         # Remove aqueous solution reaction 6
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone={"pump_port": "waste_group_4"},
+                       target_zone={"pump_port": "waste_group_3"},
                        quantity=0.75,  # ----->  Verificar este volumen!!!
-                       source_zone=self.available_1wash_zones_group4[5],
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone=self.available_1wash_zones_group3[5],
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=2,
                        delay=7.0,
                        rinse=False
@@ -1107,11 +1107,11 @@ class Reaction(BaseProcedures):
         # Wash with NaCl aq
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone=self.available_1wash_zones_group4[5],
+                       target_zone=self.available_1wash_zones_group3[5],
                        quantity=0.75,
-                       source_zone={"pump_port": "NaCl_aq_group_4"},
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone={"pump_port": "NaCl_aq_group_3"},
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=2,
                        delay=7.0,
                        rinse=False
@@ -1119,11 +1119,11 @@ class Reaction(BaseProcedures):
         # Remove aqueous phase
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone={"pump_port": "waste_group_4"},
+                       target_zone={"pump_port": "waste_group_3"},
                        quantity=0.75,
-                       source_zone=self.available_1wash_zones_group4[5],
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone=self.available_1wash_zones_group3[5],
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=2,
                        delay=7.0,
                        rinse=False
@@ -1131,11 +1131,11 @@ class Reaction(BaseProcedures):
         # Organic phase to Flash
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone={"pump_port": "column_group_4"},
+                       target_zone={"pump_port": "column_group_3"},
                        quantity=1.75,
-                       source_zone=self.available_reaction_zones_group4[5],
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone=self.available_reaction_zones_group3[5],
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=10,
                        delay=7.0,
                        rinse=False,
@@ -1143,11 +1143,11 @@ class Reaction(BaseProcedures):
         # Clean the vial
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone=self.available_reaction_zones_group4[5],
+                       target_zone=self.available_reaction_zones_group3[5],
                        quantity=1.75,
-                       source_zone={"pump_port": "THF_group_4"},
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone={"pump_port": "THF_group_3"},
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=10,
                        delay=7.0,
                        rinse=False
@@ -1155,11 +1155,11 @@ class Reaction(BaseProcedures):
         # Residues to Flash
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone={"pump_port": "column_group_4"},
+                       target_zone={"pump_port": "column_group_3"},
                        quantity=1.75,
-                       source_zone=self.available_reaction_zones_group4[5],
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone=self.available_reaction_zones_group3[5],
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=10,
                        delay=7.0,
                        rinse=False
@@ -1167,11 +1167,11 @@ class Reaction(BaseProcedures):
         # Clean Flash column
         self._add_step("add_solution",
                        specification="liquid",
-                       target_zone={"pump_port": "column_group_4"},
+                       target_zone={"pump_port": "column_group_3"},
                        quantity=3,
-                       source_zone={"pump_port": "EtOH_group_4"},
-                       source_N2={"pump_port": "N2_group_4"},
-                       waste={"pump_port": "waste_group_4"},
+                       source_zone={"pump_port": "EtOH_group_3"},
+                       source_N2={"pump_port": "N2_group_3"},
+                       waste={"pump_port": "waste_group_3"},
                        purge_N2=10,
                        delay=7.0,
                        rinse=False)
